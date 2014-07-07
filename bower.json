@@ -1,0 +1,10 @@
+{
+  "name": "set-of-objects.js",
+  "version": "1.0.0",
+  "main": "./set-of-objects.js"
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "~1.8.0",
+    "mocha": "~1.14.0"
+  }
+}
