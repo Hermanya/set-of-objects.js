@@ -11,7 +11,7 @@ setOfObjects = {
       },
       has: function (object){
         object = that.stringify(object);
-        return internalStructure.indexOf(object) !== -1
+        return internalStructure.indexOf(object) !== -1;
       },
       createIterator: function (){
         var index = 0;
