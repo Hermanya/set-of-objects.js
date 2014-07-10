@@ -1,6 +1,8 @@
 set-of-objects.js
 =================
-
+```
+$ bower install set-of-objects.js --save
+```
 Set of objects per se in JavaScript
 ```
 var mySet = new SetOfObjects();
