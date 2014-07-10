@@ -3,12 +3,10 @@ set-of-objects.js
 ```
 $ bower install set-of-objects.js --save
 ```
-Set of objects per se in JavaScript
-```
-var mySet = new SetOfObjects();
+Set of objects per se in JavaScript.
 
-```
-You can invoke
+###API
+  * `new SetOfObjects()` or `setOfObjects.create()`
   * `add`
   * `remove` by clone object, *not by index*
   * `has`
