@@ -1,3 +1,13 @@
+SetOfObjects = function (){
+  var _set = setOfObjects.create();
+  if (this !== window){
+    for (var key in _set){
+      this[key] = _set[key];
+    }
+  }else{
+    return _set;
+  }
+}
 setOfObjects = {
   create: function (){
     var that = this,
@@ -14,21 +24,24 @@ setOfObjects = {
         return internalStructure.indexOf(object) !== -1;
       },
       createIterator: function (){
-        var index = 0;
-        return {
+        var _index = 0;
+        var _api = {
           getNextValue: function (){
-            if (index < internalStructure.length){
-              var string = internalStructure[index++];
+            if (_index < internalStructure.length){
+              var string = internalStructure[_index++];
               return that.objectify(string, objectPrototype);
             }
           },
           hasNextValue: function (){
-            return index < internalStructure.length;
+            return _index < internalStructure.length;
           },
           getIndex: function (){
-            return index;
+            return _index;
           }
         };
+        _api.next = _api.getNextValue;
+        _api.hasNext = _api.hasNextValue;
+        return _api;
       },
       remove: function (object){
         object = that.stringify(object);

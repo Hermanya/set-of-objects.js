@@ -6,7 +6,7 @@
     var mySet;
     describe('Create', function () {
       it('should create an empty set', function () {
-        mySet = setOfObjects.create();
+        mySet = new SetOfObjects();
         assert.notEqual('undefined', typeof mySet);
       });
     });
@@ -28,8 +28,8 @@
       });
       it('should iterate over objects in the set', function () {
         var values = [];
-        while (myIterator.hasNextValue()){
-          values.push(myIterator.getNextValue());
+        while (myIterator.hasNext()){
+          values.push(myIterator.next());
         }
         assert.equal(values.length, mySet.getLength());
       });
